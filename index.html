@@ -10,14 +10,13 @@
 <p>Please ensure you fill in all fields</p>
 
 <h2>Personal Details</h2>
-<form>
-  Title:<br>
+<form method="post" action="/applcationsthatwehaveobtained" enctype="multipart/form-data">
+  <p>Title:
   <input type="text" name="title">
-  <br>
-  First Name:<br>
+  </p>
+  First Name:
   <input type="text" name="firstname">
-  <br>
-  Last Name:<br>
+  Last Name:
   <input type="text" name="lastname">
   <br>
   KCL Email Address:<br>
@@ -35,37 +34,56 @@
   Campus:<br>
   <input type="text" name="campus">
   <br>
-</form>
 
 <h2>Access to SITS</h2>
-<form>
-  Title:<br>
-  <input type="text" name="title">
+  Do you require access to SITS client?<br>
+  <input type="radio" name="sitsclientaccess" value="Yes" checked> Yes<br>
+  <input type="radio" name="sitsclientaccess" value="No" checked> No<br>
   <br>
-  First Name:<br>
-  <input type="text" name="firstname">
+  What access do you require?<br>
+  <input type="text" name="accessrequired">
   <br>
-  Last Name:<br>
-  <input type="text" name="lastname">
   <br>
-  KCL Email Address:<br>
-  <input type="text" name="kclemailaddress">
+  Do you require access to Student Records?<br>
+  <input type="radio" name="sraccess" value="Yes" checked> Yes<br>
+  <input type="radio" name="sraccess" value="No" checked> No<br>
   <br>
-  Telephone Extension:<br>
-  <input type="text" name="telephoneextension">
   <br>
-  Department:<br>
-  <input type="text" name="department">
+  What access do you require?<br>
+  <input type="checkbox" name="Administrative" value="Administrative"> Administrative<br>
+  <input type="checkbox" name="Academic" value="Academic"> Academic
   <br>
-  Job Role:<br>
-  <input type="text" name="jobrole">
   <br>
-  Campus:<br>
-  <input type="text" name="campus">
+  If you have selected academic access<br>
+  PRS Code:<br>
+  <input type="text" name="prscode">
   <br>
-</form>
+  Kings ID:<br>
+  <input type="text" name="kingsid">
+  <br>
 <p></p>
 
+<h2>Declarations</h2>
+  Data held within the SITS system is not to be accessed, disclosed, published or communicated in any way other than as provided for in all other relevant College regulations, policies or procedures. Any data accessed by, processed by, or derived from the SITS system must be treated as confidential.<br>
+  <br>
+  I understand and accept my responsibilities in line with the Data Protection Act 1998 and the relevant College guidance and policies and have successfully completed the online Data Protection training http://keats.kcl.ac.uk/course/view.php?id=28832:<br>
+   <input type="checkbox" name="Yes" value="Yes"> Yes<br>
+  <br>
+  I agree not to share access to the SITS system, or my username and password, with anybody.
+  <br>
+   <input type="checkbox" name="Yes" value="Yes"> Yes<br>
+  <br> I will inform Registry Applications within IT when I no longer require access to the SITS system.
+  <br>
+   <input type="checkbox" name="Yes" value="Yes"> Yes<br>
+  <br> I understand that unauthorised disclosure of data accessed by, processed by, or derived from the SITS system is subject to disciplinary proceedings.<br>
+   <input type="checkbox" name="Yes" value="Yes"> Yes<br>
+  <br> I have read and understand the notice College Business systems - personal data.<br>
+   <input type="checkbox" name="Yes" value="Yes"> Yes<br>
+  <br>
+<input type="submit" value="Submit">
+</form>
+
+<p></p>
 
 </body>
 </html>
