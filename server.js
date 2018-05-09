@@ -8,20 +8,31 @@ var ApplicationServer = express.static(__dirname);
 app.use(ApplicationServer);
 app.use(upload.array());
 
-sqlite.open('./database.sqlite') .then(runServer)
-
-function runServer(db) {
+sqlite.open('./database.sqlite') .then(runServer);function runServer(db) {
 
 	app.post('/applcationsthatwehaveobtained', function (req, res) {
 		console.log(req.body);
-		
+
 		//the form should be saved to the database
 	 	db.run(
-	 		"UPDATE tbl SET name = $name WHERE id = $id", 
+			 "INSERT INTO applications (firstname, lastname, kclemailaddress, telephoneextension, department, jobrole, campus, sitsclientaccess, accessrequired, sraccess, sraccessrequired, prscode, kingsid, termsandcond) VALUES ($firstname, $lastname, $kclemailaddress, $telephoneextension, $department, $jobrole, $campus, $sitsclientaccess, $accessrequired $sraccess, $sraccessrequired, $prscode, $kingsid, $termsandcond)",
 	 		{
-		        $id: 2,
-		        $name: "bar"
-		        //@replace with real stuff
+				$firstname: req.body.firstname,
+				$lastname: req.body.lastname,
+				$kclemailaddress: req.body.kclemailaddress,
+				$telephoneextension: req.body.telephoneextension,
+				$department: req.body.department,
+				$jobrole: req.body.jobrole,
+				$campus: req.body.campus,
+				$sitsclientaccess: req.body.sitsclientaccess ? true : false,
+				$accessrequired: req.body.accessrequired,
+				$sraccess: req.body.sraccess  ? true : false
+				$sraccessrequired: req.body.sraccessrequired,
+				$prscode: req.body.prscode,
+				$kingsid: req.body.kingsid,
+				$termsandcond: req.body.termsandcond ? true : false
+
+
 		     }
 	     ).then(function(){
 	  		res.send('We have recieved your form, and we will process it and once approved you will have your credentials sent to you within 1-12 working weeks')
@@ -33,7 +44,7 @@ function runServer(db) {
 	})
 
 	app.listen(3000)
-
+	console.log('app listening on http://localhost:3000')
 }
 
 // connect to your db then call runServer

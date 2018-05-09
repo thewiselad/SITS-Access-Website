@@ -1,7 +1,7 @@
 -- Up
 create table applications (
 	id INTEGER PRIMARY KEY,
-	initial_application DATE,
+	initial_a=pplication DATE,
 	approved DATE,
 	access_granted DATE,
 	title TEXT,
@@ -16,8 +16,8 @@ create table applications (
 	accessrequired TEXT,
 	sraccess BOOLEAN,
 	sraccessrequired TEXT,
-	prscode: TEXT
-	kingsid: TEXT
+	prscode TEXT,
+	kingsid TEXT,
 	termsandcond BOOLEAN
 );
 

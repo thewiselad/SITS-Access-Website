@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
 <head>
-<title>Page Title</title>
+<title>SITS Application</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -12,27 +12,27 @@
 <h2>Personal Details</h2>
 <form method="post" action="/applcationsthatwehaveobtained" enctype="multipart/form-data">
   <p>Title:
-  <input type="text" name="title">
+  <input type="text" name="title" required>
   </p>
   First Name:
-  <input type="text" name="firstname">
+  <input type="text" name="firstname" required>
   Last Name:
-  <input type="text" name="lastname">
+  <input type="text" name="lastname" required>
   <br>
   KCL Email Address:<br>
-  <input type="text" name="kclemailaddress">
+  <input type="text" name="kclemailaddress" required>
   <br>
   Telephone Extension:<br>
-  <input type="text" name="telephoneextension">
+  <input type="text" name="telephoneextension" required>
   <br>
   Department:<br>
-  <input type="text" name="department">
+  <input type="text" name="department" required>
   <br>
   Job Role:<br>
-  <input type="text" name="jobrole">
+  <input type="text" name="jobrole" required>
   <br>
   Campus:<br>
-  <input type="text" name="campus">
+  <input type="text" name="campus" required>
   <br>
 
 <h2>Access to SITS</h2>
@@ -41,7 +41,7 @@
   <input type="radio" name="sitsclientaccess" value="No" checked> No<br>
   <br>
   What access do you require?<br>
-  <input type="text" name="accessrequired">
+  <input type="text" name="accessrequired" required>
   <br>
   <br>
   Do you require access to Student Records?<br>
@@ -50,20 +50,20 @@
   <br>
   <br>
   What access do you require?<br>
-  <input type="checkbox" name="sraccessrequired[]" value="Administrative"> Administrative<br>
-  <input type="checkbox" name="sraccessrequired[]" value="Academic"> Academic
+  <input type="checkbox" name="sraccessrequired[]" value="Administrative" required> Administrative<br>
+  <input type="checkbox" name="sraccessrequired[]" value="Academic" required> Academic
   <br>
   <br>
   If you have selected academic access<br>
   PRS Code:<br>
-  <input type="text" name="prscode">
+  <input type="text" name="prscode" required>
   <br>
   Kings ID:<br>
-  <input type="text" name="kingsid">
+  <input type="text" name="kingsid" required>
   <br>
 <p></p>
 
-<h2>Declarations</h2>
+<h2 id=decla1 >Declarations</h2>
   Data held within the SITS system is not to be accessed, disclosed, published or communicated in any way other than as provided for in all other relevant College regulations, policies or procedures. Any data accessed by, processed by, or derived from the SITS system must be treated as confidential.<br>
   <br>
   I understand and accept my responsibilities in line with the Data Protection Act 1998 and the relevant College guidance and policies and have successfully completed the online Data Protection training http://keats.kcl.ac.uk/course/view.php?id=28832:<br>
@@ -74,7 +74,7 @@
   <br>
   <br> I understand that unauthorised disclosure of data accessed by, processed by, or derived from the SITS system is subject to disciplinary proceedings.<br>
   <br> I have read and understand the notice College Business systems - personal data.<br>
-   <input type="checkbox" name="termscond" value="Yes"> Yes<br>
+   <input type="checkbox" name="termscond" value="Yes" required> Yes<br>
   <br>
 <input type="submit" value="Submit">
 </form>
